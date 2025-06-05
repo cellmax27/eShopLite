@@ -15,16 +15,14 @@ public sealed class Commande
 
     [JsonPropertyName("createdAt")]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    //public string? Fruit { get; set; }
+
+    //[JsonPropertyName("product")]
+    public List<string>? Product { get; set; }
 
     //[JsonPropertyName("id")]
-    public List<string>? Fruits { get; set; }
-
-    //[JsonPropertyName("id")]
-    public string? User { get; set; }
+    //public string? User { get; set; }
 
     [JsonPropertyName("quantite")]
-    //public string Produit { get; set; }
     public int Quantite { get; set; }
     
     [JsonPropertyName("prix")]
