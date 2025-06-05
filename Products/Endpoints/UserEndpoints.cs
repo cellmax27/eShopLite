@@ -30,7 +30,11 @@ public static class UserEndpoints
                     .ExecuteUpdateAsync(setters => setters
                         .SetProperty(m => m.Id, user.Id)
                         .SetProperty(m => m.Name, user.Name)
-                    // TODO
+                        .SetProperty(m => m.LastName, user.LastName)
+                        .SetProperty(m => m.Email, user.Email)
+                        .SetProperty(m => m.Phone, user.Phone)
+                        .SetProperty(m => m.Adresse, user.Adresse)
+                        .SetProperty(m => m.Password, user.Password)
                     );
 
                 return affected is 1 ? Results.Ok() : Results.NotFound();

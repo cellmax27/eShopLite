@@ -23,7 +23,7 @@ internal sealed class AuthService(HttpClient httpClient, ILogger<AuthService> lo
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Error during GetUsers.");
+            logger.LogError(ex, "Error during GetAuthUsers.");
         }
 
         return users ?? [];

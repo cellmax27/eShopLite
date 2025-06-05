@@ -6,7 +6,7 @@ namespace Auth.Endpoints;
 
 public static class AuthEndpoints
 {
-    public static void MapUserEndpoints(this IEndpointRouteBuilder routes)
+    public static void MapAuthEndpoints(this IEndpointRouteBuilder routes)
     {
         var group = routes.MapGroup("/auth/login");
 
@@ -24,14 +24,14 @@ public static class AuthEndpoints
             .Produces(StatusCodes.Status404NotFound);
 
 
-     /*   group.MapPost("/", async (User user, UserDataContext db) =>
+        group.MapPost("/", async (User user, UserDataContext db) =>
             {
                 db.User.Add(user);
                 await db.SaveChangesAsync();
                 return Results.Created($"/api/User/{user.Id}", user);
             })
             .WithName("CreateUser")
-            .Produces<User>(StatusCodes.Status201Created);*/
+            .Produces<User>(StatusCodes.Status201Created);
 
     }
 }
