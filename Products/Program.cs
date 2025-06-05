@@ -28,7 +28,18 @@ var commandesContext = builder.Configuration.GetConnectionString("CommandesConte
 builder.Services.AddDbContext<CommandeDataContext>(options => options.UseSqlite(commandesContext));
 ///
 
-
+///
+///var apiBaseUrl = builder.Configuration["ApiBaseUrl"];
+var apiBaseUrl = builder.Configuration["ApiBaseUrl"] ??
+                 throw new InvalidOperationException("Configuration value 'ApiBaseUrl' not found.");
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+    client.BaseAddress = new Uri(apiBaseUrl);
+});
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+  client.BaseAddress = new Uri(apiBaseUrl);
+});
 
 
 // Add services to the container.  

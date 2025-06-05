@@ -1,3 +1,4 @@
+using System;
 using Store.Components;
 using Store.Services;
 
@@ -31,8 +32,10 @@ var commandeEndpoint = builder.Configuration["CommandeEndpoint"]
 builder.Services.AddSingleton<CommandeService>();
 builder.Services.AddHttpClient<CommandeService>(c => c.BaseAddress = new Uri(commandeEndpoint));
 
-///
 
+
+
+builder.Services.AddAuthentication();
 
 
 
@@ -43,11 +46,25 @@ builder.Services.AddRazorComponents()
 var app = builder.Build();
 
 
+/////
+///
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+//////
+
+
 
 app.UseStaticFiles();
+// this wires up the antiforgery middleware
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+
 
 app.Run();
