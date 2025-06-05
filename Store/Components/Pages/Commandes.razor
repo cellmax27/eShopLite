@@ -1,0 +1,62 @@
+﻿@page "/commandes"
+@using DataEntities
+@using Store.Services
+@inject CommandeService CommandeService
+@inject IConfiguration Configuration
+@attribute [StreamRendering(true)]
+
+<PageTitle>Commandes</PageTitle>
+
+<h1>Commandes</h1>
+
+<p>Here are some of our amazing outdoor commandes that you can purchase.</p>
+
+@if (_commandes is null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (_commandes.Count is 0)
+{
+    <p><em>There is a problem loading our commandes. Please try again later.</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var commande in _commandes)
+            {
+                <tr>
+                    <td>@commande.Name</td>
+                    <td>@commande.Instock</td>
+                    <td>@commande.Quantite.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    private List<Commande>? _commandes;
+    private Uri? _baseUri;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Set the base URI from configuration
+        var commandesEndpoint = Configuration["CommandeEndpointHttps"] 
+            ?? "https://raw.githubcommandecontent.com/MicrosoftDocs/mslearn-dotnet-cloudnative/main/dotnet-docker/Commandes/wwwroot/";
+
+        _baseUri = new Uri(commandesEndpoint);
+
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        _commandes = await CommandeService.GetCommandesAsync();
+    }
+}

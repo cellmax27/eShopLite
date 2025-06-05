@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Components\Pages\Commandes.cshtml.cs" />
+    <Compile Remove="Components\Pages\Fruits.cshtml.cs" />
+    <Compile Remove="Components\Pages\Login.cshtml.cs" />
+    <Compile Remove="Components\Pages\Users.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Components\Pages\Commandes.cshtml" />
+    <Content Remove="Components\Pages\Fruits.cshtml" />
+    <Content Remove="Components\Pages\Login.cshtml" />
+    <Content Remove="Components\Pages\Users.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataEntities\DataEntities.csproj" />
+  </ItemGroup>
+
+</Project>
