@@ -36,9 +36,9 @@ public static class DbInitializer
 
         var users = new List<User>
         {
-            new User { Id = 1, Name = "Jean", LastName="", Email="", Adresse = "", Phone="" },
-            new User { Id = 2, Name = "Paul", LastName = "", Email = "", Adresse = "", Phone = "" },
-            new User { Id = 3, Name = "Pierre", LastName = "", Email = "", Adresse = "", Phone = "" }
+            new User { Id = 1, Name = "Jean", LastName="rty", Email="test", Adresse = "erty", Phone="987", Password="" },
+            new User { Id = 2, Name = "Paul", LastName = "POP", Email = "cell", Adresse = "sdfgh", Phone = "456", Password="" },
+            new User { Id = 3, Name = "Pierre", LastName = "TATA", Email = "totot", Adresse = "sdfgh", Phone = "123", Password="" }
         };
 
         context.AddRange(users);

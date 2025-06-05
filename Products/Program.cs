@@ -29,7 +29,7 @@ builder.Services.AddDbContext<CommandeDataContext>(options => options.UseSqlite(
 ///
 
 ///
-///var apiBaseUrl = builder.Configuration["ApiBaseUrl"];
+
 var apiBaseUrl = builder.Configuration["ApiBaseUrl"] ??
                  throw new InvalidOperationException("Configuration value 'ApiBaseUrl' not found.");
 builder.Services.AddHttpClient("ApiClient", client =>
@@ -53,5 +53,7 @@ app.UseStaticFiles();
 // Explicitly specify the namespace to resolve ambiguity  
 //app.CreateDbIfNotExists();
 Products.Data.Extensions.CreateDbIfNotExists(app);
+Users.Data.Extensions.CreateDbIfNotExists(app);
+Commandes.Data.Extensions.CreateDbIfNotExists(app);
 
 app.Run();

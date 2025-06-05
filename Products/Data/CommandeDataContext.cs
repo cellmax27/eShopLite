@@ -36,9 +36,9 @@ public static class DbInitializer
 
         var commandes = new List<Commande>
         {
-            new Commande { Id = 1, Name = "Commande1", Instock = true },
-            new Commande { Id = 2, Name = "Commande2", Instock = false },
-            new Commande { Id = 3, Name = "Commande3", Instock = true }
+            new Commande { Id = 1, Name = "Commande1", Instock = true, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=10},
+            new Commande { Id = 2, Name = "Commande2", Instock = false, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=20 },
+            new Commande { Id = 3, Name = "Commande3", Instock = true, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=30 }
         };
 
         context.AddRange(commandes);
