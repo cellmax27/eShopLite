@@ -17,6 +17,10 @@ builder.Services.AddHttpClient<ProductService>(c => c.BaseAddress = new Uri(prod
 
 // TODO : other endpoints and servies
 
+
+var authEndpoint = builder.Configuration["AuthEndpoint"]
+                      ?? throw new InvalidOperationException("AuthEndpoint is not set");
+
 var userEndpoint = builder.Configuration["UserEndpoint"]
                       ?? throw new InvalidOperationException("UserEndpoint is not set");
 
