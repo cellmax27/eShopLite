@@ -30,9 +30,7 @@ public static class CommandeEndpoints
                     .ExecuteUpdateAsync(setters => setters
                         .SetProperty(m => m.Id, commande.Id)
                         .SetProperty(m => m.Name, commande.Name)
-                        .SetProperty(m => m.Description, commande.Description)
-                        .SetProperty(m => m.Price, commande.Price)
-                        .SetProperty(m => m.ImageUrl, commande.ImageUrl)
+                 // TODO
                     );
 
                 return affected is 1 ? Results.Ok() : Results.NotFound();
