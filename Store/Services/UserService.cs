@@ -6,7 +6,7 @@ internal sealed class UserService(HttpClient httpClient, ILogger<UserService> lo
 {
     public async Task<List<User>> GetUsersAsync()
     {
-        List<User>? products = null;
+        List<User>? users = null;
 
         try
         {
@@ -18,7 +18,7 @@ internal sealed class UserService(HttpClient httpClient, ILogger<UserService> lo
 
             if (response.IsSuccessStatusCode)
             {
-                products = await response.Content.ReadFromJsonAsync(UserSerializerContext.Default.ListUser);
+                users = await response.Content.ReadFromJsonAsync(UserSerializerContext.Default.ListUser);
             }
         }
         catch (Exception ex)
@@ -26,6 +26,6 @@ internal sealed class UserService(HttpClient httpClient, ILogger<UserService> lo
             logger.LogError(ex, "Error during GetUsers.");
         }
 
-        return products ?? [];
+        return users ?? [];
     }
 }
