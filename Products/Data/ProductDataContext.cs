@@ -49,6 +49,32 @@ public static class DbInitializer
 
         context.AddRange(products);
 
+        //if (context.Commande.Any())
+          //  return;
+
+        var commandes = new List<Commande>
+        {
+            new Commande { Id = 1, Name = "Commande1", Instock = true },
+            new Commande { Id = 2, Name = "Commande2", Instock = false },
+            new Commande { Id = 3, Name = "Commande3", Instock = true }
+        };
+
+        context.AddRange(commandes);
+
+
+        //if (context.User.Any())
+          //  return;
+
+        var users = new List<User>
+        {
+            new User { Id = 1, Name = "Jean", LastName="", Email="", Adresse = "", Phone="" },
+            new User { Id = 2, Name = "Paul", LastName = "", Email = "", Adresse = "", Phone = "" },
+            new User { Id = 3, Name = "Pierre", LastName = "", Email = "", Adresse = "", Phone = "" }
+        };
+
+        context.AddRange(users);
+
+
         context.SaveChanges();
     }
 }

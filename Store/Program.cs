@@ -4,7 +4,7 @@ using Store.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// TODO : other endpoints and servies
+
 var productEndpoint = builder.Configuration["ProductEndpoint"]
                       ?? throw new InvalidOperationException("ProductEndpoint is not set");
 
@@ -14,7 +14,24 @@ builder.Services.AddHttpClient<ProductService>(c => c.BaseAddress = new Uri(prod
 
 
 
+// TODO : other endpoints and servies
 
+var userEndpoint = builder.Configuration["UserEndpoint"]
+                      ?? throw new InvalidOperationException("UserEndpoint is not set");
+
+builder.Services.AddSingleton<UserService>();
+builder.Services.AddHttpClient<UserService>(c => c.BaseAddress = new Uri(userEndpoint));
+
+
+
+
+var commandeEndpoint = builder.Configuration["CommandeEndpoint"]
+                      ?? throw new InvalidOperationException("CommandeEndpoint is not set");
+
+builder.Services.AddSingleton<CommandeService>();
+builder.Services.AddHttpClient<CommandeService>(c => c.BaseAddress = new Uri(commandeEndpoint));
+
+///
 
 
 
