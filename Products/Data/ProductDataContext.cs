@@ -49,27 +49,20 @@ public static class DbInitializer
 
         context.AddRange(products);
 
-        //if (context.Commande.Any())
-          //  return;
-
         var commandes = new List<Commande>
         {
-            new Commande { Id = 1, Name = "Commande1", Instock = true },
-            new Commande { Id = 2, Name = "Commande2", Instock = false },
-            new Commande { Id = 3, Name = "Commande3", Instock = true }
+            new Commande { Id = 1, Name = "Commande1", Instock = true, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=10},
+            new Commande { Id = 2, Name = "Commande2", Instock = false, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=20 },
+            new Commande { Id = 3, Name = "Commande3", Instock = true, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=30 }
         };
 
         context.AddRange(commandes);
 
-
-        //if (context.User.Any())
-          //  return;
-
         var users = new List<User>
         {
-            new User { Id = 1, Name = "Jean", LastName="", Email="", Adresse = "", Phone="" },
-            new User { Id = 2, Name = "Paul", LastName = "", Email = "", Adresse = "", Phone = "" },
-            new User { Id = 3, Name = "Pierre", LastName = "", Email = "", Adresse = "", Phone = "" }
+            new User { Id = 1, Name = "Jean", LastName="rty", Email="test", Adresse = "erty", Phone="987", Password="" },
+            new User { Id = 2, Name = "Paul", LastName = "POP", Email = "cell", Adresse = "sdfgh", Phone = "456", Password="" },
+            new User { Id = 3, Name = "Pierre", LastName = "TATA", Email = "totot", Adresse = "sdfgh", Phone = "123", Password="" }
         };
 
         context.AddRange(users);

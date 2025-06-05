@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Authentication;
 using Store.Components;
 using Store.Services;
 
@@ -21,6 +22,10 @@ builder.Services.AddHttpClient<ProductService>(c => c.BaseAddress = new Uri(prod
 var authEndpoint = builder.Configuration["AuthEndpoint"]
                       ?? throw new InvalidOperationException("AuthEndpoint is not set");
 
+builder.Services.AddSingleton<AuthService>();
+builder.Services.AddHttpClient<AuthService>(c => c.BaseAddress = new Uri(authEndpoint));
+
+
 var userEndpoint = builder.Configuration["UserEndpoint"]
                       ?? throw new InvalidOperationException("UserEndpoint is not set");
 
@@ -35,8 +40,6 @@ var commandeEndpoint = builder.Configuration["CommandeEndpoint"]
 
 builder.Services.AddSingleton<CommandeService>();
 builder.Services.AddHttpClient<CommandeService>(c => c.BaseAddress = new Uri(commandeEndpoint));
-
-
 
 
 builder.Services.AddAuthentication();

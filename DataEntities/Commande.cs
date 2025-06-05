@@ -16,7 +16,7 @@ public sealed class Commande
     [JsonPropertyName("createdAt")]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    //[JsonPropertyName("product")]
+    [JsonPropertyName("product")]
     public List<string>? Product { get; set; }
 
     //[JsonPropertyName("id")]

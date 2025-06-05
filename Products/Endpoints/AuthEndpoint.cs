@@ -1,37 +1,37 @@
 ﻿using DataEntities;
 using Microsoft.EntityFrameworkCore;
-using Commandes.Data;
+using Users.Data;
 
 namespace Auth.Endpoints;
 
 public static class AuthEndpoints
 {
-    public static void MapCommandeEndpoints(this IEndpointRouteBuilder routes)
+    public static void MapUserEndpoints(this IEndpointRouteBuilder routes)
     {
         var group = routes.MapGroup("/auth/login");
 
-        /*group.MapGet("/", async (CommandeDataContext db) => await db.Commande.ToListAsync())
+        group.MapGet("/", async (UserDataContext db) => await db.User.ToListAsync())
             .WithName("Authenticate")
-            .Produces<List<Commande>>(StatusCodes.Status200OK);*/
+            .Produces<List<User>>(StatusCodes.Status200OK);
 
-       /* group.MapGet("/{id}", async (int id, CommandeDataContext db) => await db.Commande.AsNoTracking()
+        group.MapGet("/{id}", async (int id, UserDataContext db) => await db.User.AsNoTracking()
                     .FirstOrDefaultAsync(model => model.Id == id)
                 is { } model
                 ? Results.Ok(model)
                 : Results.NotFound())
-            .WithName("GetCommandeById")
-            .Produces<Commande>(StatusCodes.Status200OK)
-            .Produces(StatusCodes.Status404NotFound);*/
+            .WithName("GetUserById")
+            .Produces<User>(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status404NotFound);
 
 
-      /*  group.MapPost("/", async (Commande commande, CommandeDataContext db) =>
+     /*   group.MapPost("/", async (User user, UserDataContext db) =>
             {
-                db.Commande.Add(commande);
+                db.User.Add(user);
                 await db.SaveChangesAsync();
-                return Results.Created($"/api/Commande/{commande.Id}", commande);
+                return Results.Created($"/api/User/{user.Id}", user);
             })
-            .WithName("CreateCommande")
-            .Produces<Commande>(StatusCodes.Status201Created);*/
+            .WithName("CreateUser")
+            .Produces<User>(StatusCodes.Status201Created);*/
 
     }
 }

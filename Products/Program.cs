@@ -36,10 +36,10 @@ builder.Services.AddHttpClient("ApiClient", client =>
 {
     client.BaseAddress = new Uri(apiBaseUrl);
 });
-builder.Services.AddHttpClient("ApiClient", client =>
+/*builder.Services.AddHttpClient("ApiClient", client =>
 {
   client.BaseAddress = new Uri(apiBaseUrl);
-});
+});*/
 
 
 // Add services to the container.  
