@@ -1,0 +1,26 @@
+﻿@page
+@model CommandesModel
+@{
+    ViewData["Title"] = "Liste des commandes";
+}
+
+<h1>Liste des commandes</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Produit</th>
+        <th>Quantité</th>
+        <th>Prix</th>
+    </tr>
+    @foreach (var commande in Model.Commandes)
+    {
+        <tr>
+            <td>@commande.Id</td>
+            <td>@commande.Name</td>
+            <td>@commande.Quantite</td>
+            <td>@commande.Prix €</td>
+            <td>@commande.Quantite</td>
+            <td>@commande.Prix €</td>
+        </tr>
+    }
+</table>

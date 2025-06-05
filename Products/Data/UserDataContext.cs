@@ -36,15 +36,9 @@ public static class DbInitializer
 
         var users = new List<User>
         {
-            new() { Name = "Solar Powered Flashlight", Description = "A fantastic user for outdoor enthusiasts", Price = 19.99m, ImageUrl = "user1.png" },
-            new() { Name = "Hiking Poles", Description = "Ideal for camping and hiking trips", Price = 24.99m, ImageUrl = "user2.png" },
-            new() { Name = "Outdoor Rain Jacket", Description = "This user will keep you warm and dry in all weathers", Price = 49.99m, ImageUrl = "user3.png" },
-            new() { Name = "Survival Kit", Description = "A must-have for any outdoor adventurer", Price = 99.99m, ImageUrl = "user4.png" },
-            new() { Name = "Outdoor Backpack", Description = "This backpack is perfect for carrying all your outdoor essentials", Price = 39.99m, ImageUrl = "user5.png" },
-            new() { Name = "Camping Cookware", Description = "This cookware set is ideal for cooking outdoors", Price = 29.99m, ImageUrl = "user6.png" },
-            new() { Name = "Camping Stove", Description = "This stove is perfect for cooking outdoors", Price = 49.99m, ImageUrl = "user7.png" },
-            new() { Name = "Camping Lantern", Description = "This lantern is perfect for lighting up your campsite", Price = 19.99m, ImageUrl = "user8.png" },
-            new() { Name = "Camping Tent", Description = "This tent is perfect for camping trips", Price = 99.99m, ImageUrl = "user9.png" },
+            new User { Id = 1, Name = "Jean", LastName="", Email="", Adresse = "", Phone="" },
+            new User { Id = 2, Name = "Paul", LastName = "", Email = "", Adresse = "", Phone = "" },
+            new User { Id = 3, Name = "Pierre", LastName = "", Email = "", Adresse = "", Phone = "" }
         };
 
         context.AddRange(users);
