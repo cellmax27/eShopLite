@@ -25,14 +25,6 @@ Welcome to the best e-commerce platform in the world - eShopLite!
 @code {
     private LoginModel loginModel = new LoginModel();  
 
-    // Inject the authentication service
-    //[Inject]
-    //private UserService authenticationService { get; set; }  
-
-    // Inject the HttpContextAccessor to access HttpContext
-    //[Inject]
-    //private IHttpContextAccessor httpContextAccessor { get; set; }
-
     // Mark the method as async and change its return type to Task
     private async Task HandleValidSubmit()  
     {  
@@ -40,9 +32,6 @@ Welcome to the best e-commerce platform in the world - eShopLite!
         {  
             // Logique d'authentification ici  
             Console.WriteLine($"Authentification de {loginModel.Name} avec le mot de passe {loginModel.Password}");  
-
-            // Retrieve the current HttpContext
-            //var httpContext = httpContextAccessor.HttpContext;
 
             // Call the authentication service with HttpContext
             await loginModel.OnPostAsync();
