@@ -10,7 +10,7 @@ public sealed class UserDataContext(DbContextOptions<UserDataContext> options)
 
     internal async Task SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        await base.SaveChangesAsync();
     }
 }
 

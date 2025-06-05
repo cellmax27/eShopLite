@@ -10,7 +10,7 @@ public sealed class ProductDataContext(DbContextOptions<ProductDataContext> opti
 
     internal async Task SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        await base.SaveChangesAsync();
     }
 }
 

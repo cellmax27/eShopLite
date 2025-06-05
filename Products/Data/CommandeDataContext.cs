@@ -10,7 +10,7 @@ public sealed class CommandeDataContext(DbContextOptions<CommandeDataContext> op
 
     internal async Task SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        await base.SaveChangesAsync();
     }
 }
 
