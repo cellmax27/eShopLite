@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace DataEntities;
@@ -26,6 +27,7 @@ public sealed class Commande
     public int Quantite { get; set; }
     
     [JsonPropertyName("prix")]
+    //[Column(TypeName = "decimal(10,2)")]
     public double Prix { get; set; }
 }
 

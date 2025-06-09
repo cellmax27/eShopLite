@@ -28,6 +28,7 @@ else
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +40,9 @@ else
                     <td>@product.Name</td>
                     <td>@product.Description</td>
                     <td>@product.Price.ToString("C")</td>
+                    <td>
+                        <button>+</button>
+                    </td>
                 </tr>
             }
         </tbody>

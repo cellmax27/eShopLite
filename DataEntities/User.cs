@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
@@ -6,10 +7,12 @@ namespace DataEntities;
 
 public sealed class User
 {
+    [Key]
     [JsonPropertyName("id")]
     public int Id { get; set; }
 
     [JsonPropertyName("name")]
+    [MaxLength(20)]
     public string? Name { get; set; }
 
     [JsonPropertyName("lastName")]
