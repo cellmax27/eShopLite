@@ -1,8 +1,11 @@
 ﻿using DataEntities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Users.Data;
+using Products.Data;
 
-namespace Users.Endpoints;
+namespace Products.Endpoints;
+
+[ApiController]
 
 public static class UserEndpoints
 {
@@ -12,7 +15,7 @@ public static class UserEndpoints
 
         group.MapGet("/", async (UserDataContext db) => await db.User.ToListAsync())
             .WithName("GetAllUsers")
-            .Produces<List<User>>(StatusCodes.Status200OK);
+            .Produces<List<Product>>(StatusCodes.Status200OK);
 
         group.MapGet("/{id}", async (int id, UserDataContext db) => await db.User.AsNoTracking()
                     .FirstOrDefaultAsync(model => model.Id == id)
@@ -20,7 +23,7 @@ public static class UserEndpoints
                 ? Results.Ok(model)
                 : Results.NotFound())
             .WithName("GetUserById")
-            .Produces<User>(StatusCodes.Status200OK)
+            .Produces<Product>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status404NotFound);
 
         group.MapPut("/{id}", async (int id, User user, UserDataContext db) =>

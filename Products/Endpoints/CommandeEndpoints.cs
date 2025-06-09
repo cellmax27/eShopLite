@@ -1,9 +1,11 @@
 ﻿using DataEntities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Commandes.Data;
+using Products.Data;
 
-namespace Commandes.Endpoints;
+namespace Products.Endpoints;
 
+[ApiController]
 public static class CommandeEndpoints
 {
     public static void MapCommandeEndpoints(this IEndpointRouteBuilder routes)

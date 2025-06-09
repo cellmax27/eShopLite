@@ -5,7 +5,7 @@ using Products.Data;
 
 namespace Products.Endpoints;
 
-[ApiController]
+//[ApiController]
 
 public static class AuthEndpoints
 {
