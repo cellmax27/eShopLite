@@ -4,25 +4,28 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;e;
 
-public sealed class Transaction {
-    
+public sealed class Transaction
+{
     [JsonPropertyName("id")]
-    public LocalDateTime transactionDate { get; set; }
+    public int Id { get; set; }
+
+    [JsonPropertyName("id")]
+    public DateTime transactionDate { get; set; }
     
     [JsonPropertyName("amount")]
-    public BigDecimal amount { get; set; }
+    public decimal amount { get; set; }
     
     [JsonPropertyName("type")]
-    public String type; // e.g., DEPOSIT, WITHDRAWAL, TRANSFER
+    public string type; // e.g., DEPOSIT, WITHDRAWAL, TRANSFER
 
     [JsonPropertyName("description")]
-    public String description { get; set; }
+    public string description { get; set; }
 
     //@ManyToOne(fetch = FetchType.LAZY)
     /// <summary>
     /// @JoinColumn(name = "account_id", nullable = false)
     /// </summary>
-    /// [JsonPropertyName("id")]
+     [JsonPropertyName("account")]
     public Account account { get; set; }
 
 }

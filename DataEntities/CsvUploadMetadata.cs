@@ -2,12 +2,16 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;
 
-public class CsvUploadMetadata {
-    [JsonPropertyName("accountNumber")]
-    public String tableName { get; set; }
+public class CsvUploadMetadata
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
 
     [JsonPropertyName("accountNumber")]
-    public LocalDateTime uploadTime { get; set; }
+    public string tableName { get; set; }
+
+    [JsonPropertyName("accountNumber")]
+    public DateTime uploadTime { get; set; }
 
     [JsonPropertyName("accountNumber")]
     public int recordCount { get; set; }

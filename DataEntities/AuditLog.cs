@@ -2,21 +2,25 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;
 
-public sealed class AuditLog {
+public sealed class AuditLog
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
     [JsonPropertyName("username")]
-    public String username { get; set; }
+    public string username { get; set; }
 
     [JsonPropertyName("action")]
-    public String action { get; set; }
+    public string action { get; set; }
 
     [JsonPropertyName("timestamp")]
-    public LocalDateTime timestamp { get; set; }
+    public DateTime timestamp { get; set; }
 
     [JsonPropertyName("details")]
-    public String details { get; set; }
+    public string details { get; set; }
 }
 
-[JsonSerializable(typeof(List<Fruit>))]
-public sealed partial class FruitSerializerContext : JsonSerializerContext
+[JsonSerializable(typeof(List<AuditLog>))]
+public sealed partial class AuditLogSerializerContext : JsonSerializerContext
 {
 }

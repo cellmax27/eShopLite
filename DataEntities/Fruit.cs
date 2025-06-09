@@ -10,7 +10,7 @@ public sealed class Fruit
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
-    //[JsonPropertyName("instock")]
+    [JsonPropertyName("instock")]
     public bool Instock { get; set; }
     
 }

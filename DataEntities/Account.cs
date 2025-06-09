@@ -1,20 +1,21 @@
 using System.Text.Json.Serialization;
-using DataEntities;
 
 namespace DataEntities;
 
-public sealed class Account {
+public sealed class Account
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
     [JsonPropertyName("accountNumber")]
-    public String accountNumber { get; set; }
+    public string accountNumber { get; set; }
 
     [JsonPropertyName("balance")]
-    public BigDecimal balance { get; set; }
+    public decimal balance { get; set; }
 
     [JsonPropertyName("accountType")]
-    public AccountType accountType { get; set; }
-
-    [JsonPropertyName("id")]
-    public String accountType { get; set; } // e.g., CHECKING, SAVINGS { get; set; }
+    //public AccountType accountType { get; set; }
+    public string accountType { get; set; } // e.g., CHECKING, SAVINGS { get; set; }
 
     [JsonPropertyName("owner")]
     public User owner { get; set; }
@@ -22,8 +23,8 @@ public sealed class Account {
     [JsonPropertyName("transactions")]
     public List<Transaction> transactions { get; set; }
 
-    //[JsonPropertyName("id")]
-    CustomerOrder { get; set; } 
+    [JsonPropertyName("customerOrder")]
+    CustomerOrder customerOrder { get; set; } 
 
 }
 

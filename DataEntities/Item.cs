@@ -2,15 +2,18 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;
 
-public sealed class Item {
-    //private Long id; //TOOD : useless with panache
+public sealed class Item
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
     [JsonPropertyName("name")]
-    private String name { get; set; }
+    private string name { get; set; }
     [JsonPropertyName("description")]
-    private String description { get; set; }
+    private string description { get; set; }
 }
 
-[JsonSerializable(typeof(List<Fruit>))]
-public sealed partial class FruitSerializerContext : JsonSerializerContext
+[JsonSerializable(typeof(List<Item>))]
+public sealed partial class ItemSerializerContext : JsonSerializerContext
 {
 }

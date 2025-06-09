@@ -2,7 +2,10 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;
 
-public sealed class WorkPlan {
+public sealed class WorkPlan
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
     [JsonPropertyName("id")]
     private Supplier provider { get; set; }
 

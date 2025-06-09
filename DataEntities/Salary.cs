@@ -4,15 +4,19 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;
 
-public sealed class Salary {
+public sealed class Salary
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
     [JsonPropertyName("name")]
-    public String name { get; set; }
+    public string name { get; set; }
 
     [JsonPropertyName("profile_path")]
-    public String profile_path { get; set; }
+    public string profile_path { get; set; }
 
     [JsonPropertyName("caracter")]
-    public String caracter { get; set; }
+    public string caracter { get; set; }
 }
 
 [JsonSerializable(typeof(List<Salary>))]

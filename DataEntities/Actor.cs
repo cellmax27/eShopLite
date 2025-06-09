@@ -4,15 +4,17 @@ namespace DataEntities;
 
 public sealed class Actor
 {
+    [JsonPropertyName("id")]
+    public int id { get; set; }
+
     [JsonPropertyName("name")]
-    private String name { get; set; }
+    public string name { get; set; }
 
     [JsonPropertyName("profile_path")]
-    private String profile_path { get; set; }
+    private string profile_path { get; set; }
 
-    // In MySQL, CHARACTER is a reserved keyword
     [JsonPropertyName("caracter")]
-    private String caracter { get; set; }
+    private string caracter { get; set; }
 }
 
 [JsonSerializable(typeof(List<Actor>))]

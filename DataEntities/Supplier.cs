@@ -2,24 +2,27 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;
 
-public sealed class Supplier {
+public sealed class Supplier
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
     [JsonPropertyName("name")]
-    public String name  { get; set; }
+    public string name  { get; set; }
 
     [JsonPropertyName("profile_path")]
-    public String profile_path  { get; set; }
+    public string profile_path  { get; set; }
 
     [JsonPropertyName("caracter")]
-    public String caracter  { get; set; }
+    public string caracter  { get; set; }
 
-    [JsonPropertyName("idcontactEmail)]
-    public String contactEmail { get; set; }
+    [JsonPropertyName("contactEmail")]
+    public string contactEmail { get; set; }
 
     [JsonPropertyName("phoneNumber")]
-    public String phoneNumber { get; set; }
+    public string phoneNumber { get; set; }
 
     [JsonPropertyName("address")]
-    public String address { get; set; }
+    public string address { get; set; }
 	
 }
 

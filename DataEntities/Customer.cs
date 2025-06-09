@@ -3,17 +3,20 @@ using System.Text.Json.Serialization;
 namespace DataEntities;
 
 public sealed class Customer {
+    [JsonPropertyName("id")]
+    public long id { get; set; }
+
     [JsonPropertyName("name")]
-    public String name { get; set; }
+    public string name { get; set; }
 
     [JsonPropertyName("profile_path")]
-    public String profile_path { get; set; }
+    public string profile_path { get; set; }
 
     [JsonPropertyName("caracter")]
-    public String caracter { get; set; }
+    public string caracter { get; set; }
 
     [JsonPropertyName("contactEmail")]
-    public String contactEmail { get; set; }
+    public string contactEmail { get; set; }
 }
 
 [JsonSerializable(typeof(List<Customer>))]

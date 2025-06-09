@@ -4,17 +4,17 @@ namespace DataEntities;
 
 public sealed class CustomerOrder {
     [JsonPropertyName("id")]
-    public String name { get; set; }
+    public string name { get; set; }
     [JsonPropertyName("id")]
-    public Long petId { get; set; }
+    public long petId { get; set; }
     [JsonPropertyName("id")]
     public Integer quantity { get; set; }
     [JsonPropertyName("id")]
-    public LocalDateTime shipDate { get; set; }
+    public DateTime shipDate { get; set; }
     [JsonPropertyName("id")]
-    public LocalDateTime date { get; set; }
+    public DateTime date { get; set; }
     [JsonPropertyName("id")]
-    public String status { get; set; }
+    public string status { get; set; }
     [JsonPropertyName("id")]
     public Boolean complete { get; set; }
     [JsonPropertyName("id")]

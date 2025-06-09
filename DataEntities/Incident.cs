@@ -2,18 +2,21 @@ using System.Text.Json.Serialization;
 
 namespace DataEntities;
 
-public sealed class Incident {
+public sealed class Incident
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
     [JsonPropertyName("title")]
-    public String title { get; set; }
+    public string title { get; set; }
 
     [JsonPropertyName("description")]
-    public String description { get; set; }
+    public string description { get; set; }
 
     [JsonPropertyName("status")]
-    public String status { get; set; } // e.g., NEW, INVESTIGATING, RESOLVED, CLOSED
+    public string status { get; set; } // e.g., NEW, INVESTIGATING, RESOLVED, CLOSED
 
     [JsonPropertyName("severity")]
-    public String severity { get; set; } // e.g., LOW, MEDIUM, HIGH, CRITICAL
+    public string severity { get; set; } // e.g., LOW, MEDIUM, HIGH, CRITICAL
 
     [JsonPropertyName("createdAt")]
     public DateTime createdAt { get; set; };
