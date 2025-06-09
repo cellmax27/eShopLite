@@ -14,16 +14,16 @@ Welcome to the best e-commerce platform in the world - eShopLite!
 <h2>Authentification</h2>
 
 <EditForm Model="@loginModel" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
-    <DataAnnotationsValidator />
-    <!-- <ValidationSummary /> -->
+    <DataAnnotationsValidator /><!--Commenter ces 2 lignes et onpasse dans le AuthService-->
+    <ValidationSummary />
     <div>  
         <label for="loginName">Nom d'utilisateur :</label>  
-        <InputText id="loginName" class="form-control" @bind-Value="loginModel.Name" />
+        <InputText id="loginName" @bind-Value="loginModel.Name" />
         <ValidationMessage For="@(() => loginModel.Name)" />  
     </div>  
     <div>  
         <label for="password">Mot de passe :</label>  
-        <InputText id="password" class="form-control" @bind-Value="loginModel.Password" type="password" />
+        <InputText id="password" @bind-Value="loginModel.Password" type="password" />
         <ValidationMessage For="@(() => loginModel.Password)" />  
     </div>  
     <button type="submit">Se connecter</button>  
