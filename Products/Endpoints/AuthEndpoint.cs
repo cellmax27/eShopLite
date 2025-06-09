@@ -1,8 +1,11 @@
 ﻿using DataEntities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Users.Data;
+using Products.Data;
 
-namespace Auth.Endpoints;
+namespace Products.Endpoints;
+
+[ApiController]
 
 public static class AuthEndpoints
 {
