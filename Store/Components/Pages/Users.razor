@@ -26,8 +26,8 @@ else
             <tr>
                 <th>Image</th>
                 <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
+                <th>LastName</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody>
@@ -36,8 +36,8 @@ else
                 <tr>
                     <td>img</td>
                     <td>@user.Name</td>
-                    <td>@user.Description</td>
-                    <td>@user.Price</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
                 </tr>
             }
         </tbody>
@@ -46,7 +46,7 @@ else
 
 @code {
 
-    private List<Product>? _users;
+    private List<User>? _users;
     private Uri? _baseUri;
 
     protected override async Task OnInitializedAsync()
