@@ -51,18 +51,18 @@ public static class DbInitializer
 
         var commandes = new List<Commande>
         {
-            new Commande { Id = 1, Name = "Commande1", Instock = true, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=10},
-            new Commande { Id = 2, Name = "Commande2", Instock = false, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=20 },
-            new Commande { Id = 3, Name = "Commande3", Instock = true, CreatedAt=DateTime.UtcNow, Product=new List<string>(), Quantite=2, Prix=30 }
+            new() { Id = 1, Name = "Commande1", Instock = true, CreatedAt=DateTime.UtcNow, Product=[], Quantite=2, Prix=10},
+            new() { Id = 2, Name = "Commande2", Instock = false, CreatedAt=DateTime.UtcNow, Product=[], Quantite=2, Prix=20 },
+            new() { Id = 3, Name = "Commande3", Instock = true, CreatedAt=DateTime.UtcNow, Product=[], Quantite=2, Prix=30 }
         };
 
         context.AddRange(commandes);
 
         var users = new List<User>
         {
-            new User { Id = 1, Name = "Jean", LastName="rty", Email="test", Adresse = "erty", Phone="987", Password="" },
-            new User { Id = 2, Name = "Paul", LastName = "POP", Email = "cell", Adresse = "sdfgh", Phone = "456", Password="" },
-            new User { Id = 3, Name = "Pierre", LastName = "TATA", Email = "totot", Adresse = "sdfgh", Phone = "123", Password="" }
+            new() { Id = 1, Name = "Jean", LastName="rty", Email="test", Adresse = "erty", Phone="987", Password="" },
+            new() { Id = 2, Name = "Paul", LastName = "POP", Email = "cell", Adresse = "sdfgh", Phone = "456", Password="" },
+            new() { Id = 3, Name = "Pierre", LastName = "TATA", Email = "totot", Adresse = "sdfgh", Phone = "123", Password="" }
         };
 
         context.AddRange(users);

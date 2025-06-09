@@ -5,22 +5,22 @@ namespace DataEntities;
 public sealed class Interaction {
 
     // --- Champs Obligatoires ---
-    [JsonPropertyName("id")]
-    public long userId { get; set; }
+    [JsonPropertyName("UserId")]
+    public long UserId { get; set; }
 
-    [JsonPropertyName("id")]
-    public long itemId { get; set; }
+    [JsonPropertyName("ItemId")]
+    public long ItemId { get; set; }
 
-    [JsonPropertyName("id")]
+    [JsonPropertyName("Type")]
     //@Enumerated(EnumType.STRING) // Stocke le nom de l'enum ("VIEW", "CLICK", etc.) plutôt que son ordinal
-    public InteractionType type { get; set; }
+    public InteractionType Type { get; set; }
 
-    [JsonPropertyName("id")]
-    public DateTime timestamp { get; set; }
+    [JsonPropertyName("Timestamp")]
+    public DateTime Timestamp { get; set; }
 
     // --- Champ Optionnel ---
-    [JsonPropertyName("id")]
-    public double value { get; set; }  // Pour les interactions avec une valeur (ex: note de 1 à 5)
+    [JsonPropertyName("Value")]
+    public double Value { get; set; }  // Pour les interactions avec une valeur (ex: note de 1 à 5)
 
     // --- Enum interne pour les types d'interaction ---
     public enum InteractionType {
@@ -30,7 +30,6 @@ public sealed class Interaction {
         PURCHASE,
         ADD_TO_CART
     }
-
 
 }
 

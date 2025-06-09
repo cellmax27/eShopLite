@@ -8,22 +8,23 @@ public sealed class Work
     public int Id { get; set; }
     [JsonPropertyName("name")]
     
-    private string? name { get; set; }
+    private string? Name { get; set; }
     [JsonPropertyName("description")]
     
-    private string? description { get; set; }
+    private string? Description { get; set; }
+
     [JsonPropertyName("price")]
     
-    private double price { get; set; }
+    private double Price { get; set; }
     [JsonPropertyName("duration")]
     
-    private int duration { get; set; }
+    private int Duration { get; set; }
     [JsonPropertyName("editable")]
     
-    private bool editable { get; set; }
+    private bool Editable { get; set; }
     [JsonPropertyName("targetCustomer")]
     
-    private string? targetCustomer { get; set; }
+    private string? TargetCustomer { get; set; }
 
     //@ManyToMany
     //@JoinTable(name = "works_providers", joinColumns = @JoinColumn(name = "id_work"), inverseJoinColumns = @JoinColumn(name = "id_user"))

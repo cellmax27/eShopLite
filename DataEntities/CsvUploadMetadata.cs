@@ -8,13 +8,13 @@ public class CsvUploadMetadata
     public int Id { get; set; }
 
     [JsonPropertyName("accountNumber")]
-    public string tableName { get; set; }
+    public string? TableName { get; set; }
 
     [JsonPropertyName("accountNumber")]
-    public DateTime uploadTime { get; set; }
+    public DateTime UploadTime { get; set; }
 
     [JsonPropertyName("accountNumber")]
-    public int recordCount { get; set; }
+    public int RecordCount { get; set; }
 }
 
 [JsonSerializable(typeof(List<CsvUploadMetadata>))]

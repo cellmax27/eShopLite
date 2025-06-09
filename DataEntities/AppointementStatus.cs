@@ -1,4 +1,4 @@
-
+namespace DataEntities;
 public enum AppointementStatus {
     SCHEDULED,//("scheduled"),
     CONFIRMED,//("confirmed"),

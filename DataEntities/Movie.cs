@@ -45,7 +45,7 @@ public sealed class Movie
     public DateTime ReleaseDate { get; set; }
 
     [JsonPropertyName("title")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     [JsonPropertyName("video")]
     public bool Video { get; set; }

@@ -1,4 +1,4 @@
-
+namespace DataEntities;
 
 public enum AccountType {
     CHECKING,//("Checking Account"),
