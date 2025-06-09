@@ -1,7 +1,7 @@
 ﻿using DataEntities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Prodcuts.Data;
+namespace Products.Data;
 
 public sealed class CommandeDataContext(DbContextOptions<CommandeDataContext> options)
     : DbContext(options)
@@ -13,7 +13,7 @@ public sealed class CommandeDataContext(DbContextOptions<CommandeDataContext> op
         await base.SaveChangesAsync();
     }
 }
-
+/*
 public static class Extensions
 {
     public static void CreateDbIfNotExists(this IHost host)
@@ -45,4 +45,4 @@ public static class DbInitializer
 
         context.SaveChanges();
     }
-}
+}*/

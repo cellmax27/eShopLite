@@ -1,9 +1,11 @@
 ﻿using DataEntities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Products.Data;
 
 namespace Products.Endpoints;
 
+[ApiController]
 public static class ProductEndpoints
 {
     public static void MapProductEndpoints(this IEndpointRouteBuilder routes)

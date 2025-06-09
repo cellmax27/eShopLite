@@ -1,7 +1,7 @@
 ﻿using DataEntities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Users.Data;
+namespace Products.Data;
 
 public sealed class UserDataContext(DbContextOptions<UserDataContext> options)
     : DbContext(options)
@@ -13,7 +13,7 @@ public sealed class UserDataContext(DbContextOptions<UserDataContext> options)
         await base.SaveChangesAsync();
     }
 }
-
+/*
 public static class Extensions
 {
     public static void CreateDbIfNotExists(this IHost host)
@@ -36,13 +36,13 @@ public static class DbInitializer
 
         var users = new List<User>
         {
-            new User { Id = 1, Name = "Jean", LastName="rty", Email="test", Adresse = "erty", Phone="987", Password="" },
-            new User { Id = 2, Name = "Paul", LastName = "POP", Email = "cell", Adresse = "sdfgh", Phone = "456", Password="" },
-            new User { Id = 3, Name = "Pierre", LastName = "TATA", Email = "totot", Adresse = "sdfgh", Phone = "123", Password="" }
+            new() { Id = 1, Name = "Jean", LastName="rty", Email="test", Adresse = "erty", Phone="987", Password="" },
+            new() { Id = 2, Name = "Paul", LastName = "POP", Email = "cell", Adresse = "sdfgh", Phone = "456", Password="" },
+            new() { Id = 3, Name = "Pierre", LastName = "TATA", Email = "totot", Adresse = "sdfgh", Phone = "123", Password="" }
         };
 
         context.AddRange(users);
 
         context.SaveChanges();
     }
-}
+}*/
