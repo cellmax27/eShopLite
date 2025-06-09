@@ -9,7 +9,7 @@ public sealed class Movie
     public int Id { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [JsonPropertyName("birth")]
     public DateTime Birth { get; set; }
@@ -21,25 +21,25 @@ public sealed class Movie
     public bool Adult { get; set; }
 
     [JsonPropertyName("backdrop_path")]
-    public string BackdropPath { get; set; }
+    public string? BackdropPath { get; set; }
 
     [JsonPropertyName("genre_ids")]
-    public long[] GenreIds { get; set; }
+    public long[]? GenreIds { get; set; }
 
     [JsonPropertyName("original_language")]
-    public string OriginalLanguage { get; set; }
+    public string? OriginalLanguage { get; set; }
 
     [JsonPropertyName("original_title")]
-    public string OriginalTitle { get; set; }
+    public string? OriginalTitle { get; set; }
 
     [JsonPropertyName("overview")]
-    public string Overview { get; set; }
+    public string? Overview { get; set; }
 
     [JsonPropertyName("popularity")]
     public long Popularity { get; set; }
 
     [JsonPropertyName("poster_path")]
-    public string PosterPath { get; set; }
+    public string? PosterPath { get; set; }
 
     [JsonPropertyName("release_date")]
     public DateTime ReleaseDate { get; set; }

@@ -7,10 +7,10 @@ public sealed class Invoice
     [JsonPropertyName("id")]
     public int Id { get; set; }
     [JsonPropertyName("number")]
-    public string number { get; set; }
+    public string? number { get; set; }
 
     [JsonPropertyName("status")]
-    public string status { get; set; }
+    public string? status { get; set; }
 
     [JsonPropertyName("totalAmount")]
     public double totalAmount { get; set; }

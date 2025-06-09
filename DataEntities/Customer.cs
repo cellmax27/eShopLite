@@ -7,16 +7,16 @@ public sealed class Customer {
     public long id { get; set; }
 
     [JsonPropertyName("name")]
-    public string name { get; set; }
+    public string? name { get; set; }
 
     [JsonPropertyName("profile_path")]
-    public string profile_path { get; set; }
+    public string? profile_path { get; set; }
 
     [JsonPropertyName("caracter")]
-    public string caracter { get; set; }
+    public string? caracter { get; set; }
 
     [JsonPropertyName("contactEmail")]
-    public string contactEmail { get; set; }
+    public string? contactEmail { get; set; }
 }
 
 [JsonSerializable(typeof(List<Customer>))]

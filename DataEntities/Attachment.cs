@@ -8,19 +8,19 @@ public sealed class Attachment
     public int Id { get; set; }
 
     [JsonPropertyName("fileName")]
-    public string fileName { get; set; }
+    public string? fileName { get; set; }
 
     [JsonPropertyName("iddata)]
-    public byte[] data { get; set; }
+    public byte[]? data { get; set; }
 
     [JsonPropertyName("filename")]
     /*     @ManyToOne
         public Email email;  { get; set; }*/
     //private String id; // ID unique pour le téléchargement
-    private string filename { get; set; }
+    private string? filename { get; set; }
 
     [JsonPropertyName("contentType")]
-    private string contentType { get; set; }
+    private string? contentType { get; set; }
 
     [JsonPropertyName("size")]
     private long size { get; set; } // Taille en octets

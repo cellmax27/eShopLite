@@ -24,20 +24,20 @@ public sealed class Appointement
     private AppointementStatus status { get; set; }
 
     [JsonPropertyName("customer")]
-    private Customer customer { get; set; }
+    private Customer? customer { get; set; }
 
     [JsonPropertyName("provider")]
-    private Supplier provider { get; set; }
+    private Supplier? provider { get; set; }
 
     [JsonPropertyName("work")]
-    private Work work { get; set; }
+    private Work? work { get; set; }
 
     //[JsonPropertyName("profile_path")]
     //@OneToMany(mappedBy = "appointment")
     //private List<ChatMessage> chatMessages;
 
     [JsonPropertyName("invoice")]
-    private Invoice invoice { get; set; }
+    private Invoice? invoice { get; set; }
 
     //[JsonPropertyName("profile_path")]
 //@OneToOne(mappedBy = "requested", cascade = {CascadeType.ALL})

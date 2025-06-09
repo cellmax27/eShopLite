@@ -8,23 +8,23 @@ public sealed class Account
     public int Id { get; set; }
 
     [JsonPropertyName("accountNumber")]
-    public string accountNumber { get; set; }
+    public string? accountNumber { get; set; }
 
     [JsonPropertyName("balance")]
     public decimal balance { get; set; }
 
     [JsonPropertyName("accountType")]
     //public AccountType accountType { get; set; }
-    public string accountType { get; set; } // e.g., CHECKING, SAVINGS { get; set; }
+    public string? accountType { get; set; } // e.g., CHECKING, SAVINGS { get; set; }
 
     [JsonPropertyName("owner")]
-    public User owner { get; set; }
+    public User? owner { get; set; }
 
     [JsonPropertyName("transactions")]
-    public List<Transaction> transactions { get; set; }
+    public List<Transaction>? transactions { get; set; }
 
     [JsonPropertyName("customerOrder")]
-    CustomerOrder customerOrder { get; set; } 
+    CustomerOrder? customerOrder { get; set; } 
 
 }
 

@@ -26,7 +26,7 @@ public sealed class ChatMessage
 //using NodaTime;
 //Instant now = SystemClock.Instance.GetCurrentInstant();
 
-
+    /*
     public ChatMessage() {
         this.timestamp = DateTime.Now;
     }
@@ -42,18 +42,5 @@ public sealed class ChatMessage
         this(type, username, content);
         this.recipient = recipient;
     }
-
-    // Getters et Setters si nécessaires (Jackson/JSON-B les utilisent)
-    // Ou rendre les champs publics si la simplicité prime pour l'exemple
-
-    @Override
-    public String toString() {
-        return "ChatMessage{" +
-               "type='" + type + '\'' +
-               ", username='" + username + '\'' +
-               ", recipient='" + recipient + '\'' +
-               ", content='" + content + '\'' +
-               ", timestamp=" + timestamp +
-               '}';
-    }
+    */
 }

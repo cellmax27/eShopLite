@@ -11,13 +11,13 @@ public sealed class AuditLog
     public string username { get; set; }
 
     [JsonPropertyName("action")]
-    public string action { get; set; }
+    public string? action { get; set; }
 
     [JsonPropertyName("timestamp")]
     public DateTime timestamp { get; set; }
 
     [JsonPropertyName("details")]
-    public string details { get; set; }
+    public string? details { get; set; }
 }
 
 [JsonSerializable(typeof(List<AuditLog>))]

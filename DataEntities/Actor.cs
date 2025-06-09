@@ -8,13 +8,13 @@ public sealed class Actor
     public int id { get; set; }
 
     [JsonPropertyName("name")]
-    public string name { get; set; }
+    public string? name { get; set; }
 
     [JsonPropertyName("profile_path")]
-    private string profile_path { get; set; }
+    private string? profile_path { get; set; }
 
     [JsonPropertyName("caracter")]
-    private string caracter { get; set; }
+    private string? caracter { get; set; }
 }
 
 [JsonSerializable(typeof(List<Actor>))]

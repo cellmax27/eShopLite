@@ -16,10 +16,10 @@ public sealed class Transaction
     public decimal amount { get; set; }
     
     [JsonPropertyName("type")]
-    public string type; // e.g., DEPOSIT, WITHDRAWAL, TRANSFER
+    public string? type; // e.g., DEPOSIT, WITHDRAWAL, TRANSFER
 
     [JsonPropertyName("description")]
-    public string description { get; set; }
+    public string? description { get; set; }
 
     //@ManyToOne(fetch = FetchType.LAZY)
     /// <summary>

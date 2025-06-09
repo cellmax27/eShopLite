@@ -5,7 +5,7 @@ namespace DataEntities;
 public class Order {
     [JsonPropertyName("id")]
     public int Id { get; set; }
-    public string name { get; set; }
+    public string? name { get; set; }
     public long petId { get; set; }
     public int quantity { get; set; }
     public DateTime shipDate { get; set; }

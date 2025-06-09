@@ -8,9 +8,10 @@ public sealed class Item
     public int Id { get; set; }
 
     [JsonPropertyName("name")]
-    private string name { get; set; }
+    private string? name { get; set; }
+
     [JsonPropertyName("description")]
-    private string description { get; set; }
+    private string? description { get; set; }
 }
 
 [JsonSerializable(typeof(List<Item>))]
