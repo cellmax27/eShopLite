@@ -11,8 +11,11 @@
 
 Welcome to the best e-commerce platform in the world - eShopLite!  
 
-<h2>Authentification</h2>  
+<h2>Authentification</h2>
+
 <EditForm Model="@loginModel" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
+    <DataAnnotationsValidator />
+    <!-- <ValidationSummary /> -->
     <div>  
         <label for="loginName">Nom d'utilisateur :</label>  
         <InputText id="loginName" class="form-control" @bind-Value="loginModel.Name" />
