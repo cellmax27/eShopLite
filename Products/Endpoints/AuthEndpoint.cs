@@ -16,17 +16,17 @@ public static class AuthEndpoints
         group.MapGet("/", async (UserDataContext db) => await db.User.ToListAsync())
             .WithName("Authenticate")
             .Produces<List<User>>(StatusCodes.Status200OK);
-        /*
+        
         group.MapGet("/{id}", async (int id, UserDataContext db) => await db.User.AsNoTracking()
                     .FirstOrDefaultAsync(model => model.Id == id)
                 is { } model
                 ? Results.Ok(model)
                 : Results.NotFound())
-            .WithName("GetUserById")
+            .WithName("AuthenticateUserById")
             .Produces<User>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status404NotFound);
 
-
+        /*
         group.MapPost("/", async (User user, UserDataContext db) =>
             {
                 db.User.Add(user);
