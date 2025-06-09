@@ -1,5 +1,8 @@
-public class LoginRequest
+namespace Products.Data
 {
-    public string? Name { get; set; }
-    public string? Password { get; set; }
+    public class LoginRequest
+    {
+        public string? Name { get; set; }
+        public string? Password { get; set; }
+    }
 }

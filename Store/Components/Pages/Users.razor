@@ -34,8 +34,10 @@ else
             @foreach (var user in _users)
             {
                 <tr>
+                    <td>img</td>
                     <td>@user.Name</td>
-                    <td>@user.LastName</td>
+                    <td>@user.Description</td>
+                    <td>@user.Price</td>
                 </tr>
             }
         </tbody>
@@ -44,7 +46,7 @@ else
 
 @code {
 
-    private List<User>? _users;
+    private List<Product>? _users;
     private Uri? _baseUri;
 
     protected override async Task OnInitializedAsync()

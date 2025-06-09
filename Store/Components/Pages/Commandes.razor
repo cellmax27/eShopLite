@@ -25,9 +25,9 @@ else
         <thead>
             <tr>
                 <th>Image</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
+                <th>Instock</th>
+                <th>Quantite</th>
+                <th>CreatedAt</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +37,7 @@ else
                     <td>@commande.Name</td>
                     <td>@commande.Instock</td>
                     <td>@commande.Quantite.ToString("C")</td>
+                    <td>@commande.CreatedAt</td>
                 </tr>
             }
         </tbody>
