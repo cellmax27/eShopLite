@@ -1,12 +1,17 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net.Http.Json;
+using System.Net.NetworkInformation;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using Store.Services;
+
 public class LoginModel : PageModel
 {
-    [BindProperty]
     [Required(ErrorMessage = "Le nom est obligatoire.")]
+    [BindProperty]
+    //[EmailAddress(ErrorMessage = "Adresse email invalide.")]
     public string? Name { get; set; }
 
     [Required(ErrorMessage = "Le mot de passe est obligatoire.")]
@@ -22,6 +27,8 @@ public class LoginModel : PageModel
         using var client = new HttpClient { BaseAddress = new Uri("http://localhost:5228") };
 
         var response = await client.PostAsJsonAsync("/auth/login", new { Name, Password });
+
+        //AuthenticationService AuthenticationService = new AuthenticationService();
 
         if (response.IsSuccessStatusCode)
         {
