@@ -2,12 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Products.Data;
 using Products.Endpoints;
 
-using Users.Data;
-using Users.Endpoints;
-
-using Commandes.Data;
-using Commandes.Endpoints;
-
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -28,6 +22,14 @@ var commandesContext = builder.Configuration.GetConnectionString("CommandesConte
 builder.Services.AddDbContext<CommandeDataContext>(options => options.UseSqlite(commandesContext));
 ///
 
+//REST
+// Add services to the container.
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+
+//SWAGGER
+//builder.Services.AddSwaggerGen();
 ///
 
 var apiBaseUrl = builder.Configuration["ApiBaseUrl"] ??
@@ -41,15 +43,35 @@ builder.Services.AddHttpClient("ApiClient", client =>
 // Add services to the container.  
 var app = builder.Build();
 
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    //app.UseSwagger();
+    //app.UseSwaggerUI();
+}
+
 // Configure the HTTP request pipeline.  
 app.MapProductEndpoints();
+app.MapUserEndpoints();
+//app.MapCommandeEndpoints();
+app.MapAuthEndpoints();
+
 
 app.UseStaticFiles();
 
+app.UseHttpsRedirection();
+app.MapStaticAssets(); // Enables optimized static file serving
+
+app.UseAuthorization();
+app.MapDefaultControllerRoute().WithStaticAssets();
+//app.MapRazorPages().WithStaticAssets();
+
+
 // Explicitly specify the namespace to resolve ambiguity  
-//app.CreateDbIfNotExists();
-Products.Data.Extensions.CreateDbIfNotExists(app);
-Users.Data.Extensions.CreateDbIfNotExists(app);
-Commandes.Data.Extensions.CreateDbIfNotExists(app);
+app.CreateDbIfNotExists();
+//Products.Data.Extensions.CreateDbIfNotExists(app);
+//Users.Data.Extensions.CreateDbIfNotExists(app);
+//Commandes.Data.Extensions.CreateDbIfNotExists(app);
 
 app.Run();

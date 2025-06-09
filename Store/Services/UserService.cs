@@ -1,4 +1,5 @@
-﻿using DataEntities;
+﻿using System.Text.Json;
+using DataEntities;
 
 namespace Store.Services;
 
@@ -18,7 +19,10 @@ internal sealed class UserService(HttpClient httpClient, ILogger<UserService> lo
 
             if (response.IsSuccessStatusCode)
             {
-                users = await response.Content.ReadFromJsonAsync(UserSerializerContext.Default.ListUser);
+                users = await response.Content.ReadFromJsonAsync<List<User>>(new JsonSerializerOptions
+                {
+                    TypeInfoResolver = new UserSerializerContext()
+                });
             }
         }
         catch (Exception ex)

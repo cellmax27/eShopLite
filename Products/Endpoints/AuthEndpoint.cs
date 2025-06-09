@@ -5,7 +5,7 @@ using Products.Data;
 
 namespace Products.Endpoints;
 
-//[ApiController]
+[ApiController]
 
 public static class AuthEndpoints
 {
@@ -16,7 +16,7 @@ public static class AuthEndpoints
         group.MapGet("/", async (UserDataContext db) => await db.User.ToListAsync())
             .WithName("Authenticate")
             .Produces<List<User>>(StatusCodes.Status200OK);
-
+        /*
         group.MapGet("/{id}", async (int id, UserDataContext db) => await db.User.AsNoTracking()
                     .FirstOrDefaultAsync(model => model.Id == id)
                 is { } model
@@ -35,6 +35,6 @@ public static class AuthEndpoints
             })
             .WithName("CreateUser")
             .Produces<User>(StatusCodes.Status201Created);
-
+        */
     }
 }
