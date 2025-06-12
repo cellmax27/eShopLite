@@ -1,11 +1,12 @@
-﻿
-    using DataEntities;
+﻿namespace EshopController;
+
+using DataEntities;
     using Microsoft.AspNetCore.Mvc;
-    using Products.Data;
+    using EshopController.Data;
     using System.Collections.Generic;
     using System.Linq;
 
-    //namespace Products;
+    //namespace EshopController;
 
     //[ApiController]
     //[Route("api/[controller]")] // Route de l'API : /api/Auths

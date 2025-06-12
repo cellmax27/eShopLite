@@ -1,6 +1,11 @@
-namespace Products
-{
+namespace EshopController;
+
+    using System;
+    using System.Collections.Generic;
+    using System.Text.Json.Serialization;
     using DataEntities;
+    using Microsoft.AspNetCore.Mvc;
+    using EshopController.Data;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
     using System.Linq;
@@ -72,4 +77,3 @@ namespace Products
             return NoContent(); // Retourne 204 No Content
         }
     }
-}

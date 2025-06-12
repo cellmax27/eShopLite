@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Products.Data;
-using Products.Endpoints;
+using EshopController.Data;
+using EshopController.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,7 +70,7 @@ app.MapDefaultControllerRoute().WithStaticAssets();
 
 // Explicitly specify the namespace to resolve ambiguity  
 app.CreateDbIfNotExists();
-//Products.Data.Extensions.CreateDbIfNotExists(app);
+//EshopController.Data.Extensions.CreateDbIfNotExists(app);
 //Users.Data.Extensions.CreateDbIfNotExists(app);
 //Commandes.Data.Extensions.CreateDbIfNotExists(app);
 

@@ -27,6 +27,7 @@ else
                 <th>Image</th>
                 <th>Instock</th>
                 <th>Quantite</th>
+                <th>Prix unitaire</th>
                 <th>CreatedAt</th>
             </tr>
         </thead>
@@ -37,6 +38,7 @@ else
                     <td>@commande.Name</td>
                     <td>@commande.Instock</td>
                     <td>@commande.Quantite.ToString("C")</td>
+                    <td>@commande.Prix.ToString("C")</td>
                     <td>@commande.CreatedAt</td>
                 </tr>
             }

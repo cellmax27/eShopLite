@@ -1,3 +1,5 @@
+namespace EshopController;
+
 using DataEntities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

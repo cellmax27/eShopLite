@@ -10,7 +10,7 @@ internal sealed class AuthService(HttpClient httpClient, ILogger<AuthService> lo
 
         try
         {
-            var response = await httpClient.GetAsync("/auth/login");
+            var response = await httpClient.GetAsync("/auth/login/1");
             var responseText = await response.Content.ReadAsStringAsync();
 
             logger.LogInformation("Http status code: {StatusCode}", response.StatusCode);

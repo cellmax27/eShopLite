@@ -1,4 +1,4 @@
-namespace Products.Data
+namespace EshopController.Data
 {
     public class LoginRequest
     {

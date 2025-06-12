@@ -1,9 +1,9 @@
 ﻿using DataEntities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Products.Data;
+using EshopController.Data;
 
-namespace Products.Endpoints;
+namespace EshopController.Endpoints;
 
 [ApiController]
 public static class CommandeEndpoints

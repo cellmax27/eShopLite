@@ -1,5 +1,5 @@
-namespace Products
-{
+namespace EshopController;
+
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
     using System.Linq;
@@ -96,4 +96,3 @@ namespace Products
             return NoContent();
         }
     }
-}

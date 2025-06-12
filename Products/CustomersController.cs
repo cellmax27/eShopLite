@@ -1,7 +1,11 @@
+namespace EshopController; 
+
 using DataEntities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+
+//namespace EshopController.Controllers;
 
 [ApiController]
 [Route("api/[controller]")] // Route de l'API : /api/Customers

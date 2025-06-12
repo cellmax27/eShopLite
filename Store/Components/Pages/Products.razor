@@ -41,7 +41,9 @@ else
                     <td>@product.Description</td>
                     <td>@product.Price.ToString("C")</td>
                     <td>
-                        <button>+</button>
+						<input type="number" min="1" max="10" value="1" style="width: 50px;" />
+                        <button onclick="decreaseProductsCount()">+</button>
+                        <button onclick="increaProductsCount()">+</button>
                     </td>
                 </tr>
             }

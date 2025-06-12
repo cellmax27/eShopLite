@@ -1,5 +1,5 @@
-namespace Products
-{
+namespace EshopController;
+
     using DataEntities;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
@@ -72,4 +72,3 @@ namespace Products
             return NoContent(); // Retourne 204 No Content
         }
     }
-}

@@ -1,7 +1,7 @@
 ﻿using DataEntities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Products.Data;
+namespace EshopController.Data;
 
 public sealed class ProductDataContext(DbContextOptions<ProductDataContext> options)
     : DbContext(options)
@@ -12,6 +12,11 @@ public sealed class ProductDataContext(DbContextOptions<ProductDataContext> opti
     {
         await base.SaveChangesAsync();
     }
+
+    /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("VotreChaîneDeConnexionIci");
+    }*/
 }
 
 public static class Extensions

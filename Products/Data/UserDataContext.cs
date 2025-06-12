@@ -1,7 +1,7 @@
 ﻿using DataEntities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Products.Data;
+namespace EshopController.Data;
 
 public sealed class UserDataContext(DbContextOptions<UserDataContext> options)
     : DbContext(options)
